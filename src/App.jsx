@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import GetTo100 from './components/getTo100';
+import GetTo100 from './components/GetTo100/getTo100';
 
 class App extends Component {
     render() { 
-        return (<GetTo100 />);
+        return (<div><GetTo100 /></div>);
     }
 }
  
