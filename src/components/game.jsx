@@ -5,8 +5,7 @@ class Game extends Component {
     state = {
         players : this.props.players,
         player_turn : 0,
-        mid_game : this.props.mid_game,
-        game_ended : false
+        mid_game : this.props.mid_game
     }
 
     render() {
