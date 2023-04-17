@@ -18,11 +18,11 @@ class GamsMenu extends Component {
         else
         {
             return (
-                <div>
+                <nav>
                     <input type="text" id="playerName" placeholder="Player Name" onChange={(event) => this.playerName = event.target.value}/>
                     <button onClick={() => this.props.onAddGame(this.playerName)}>Add Player</button>
                     <button onClick={this.props.onStartGame}>Start Game</button>
-                </div>
+                </nav>
                 )
         }
 

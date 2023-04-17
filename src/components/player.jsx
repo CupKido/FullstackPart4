@@ -4,15 +4,19 @@ class Player extends Component {
         playerName : this.props.player.name,
         steps : 0,
         amount : Math.floor(Math.random() * 99),
-        is_turn : this.props.is_turn
+        is_turn : this.props.is_turn,
+        player_won : false
      } 
     render() { 
         if(this.props.mid_game === false && this.state.steps !== 0){
-            this.setState({mid_game:false, steps : 0, amount : Math.floor(Math.random() * 99)});
+            //this.setState({mid_game:false, steps : 0, amount : Math.floor(Math.random() * 99)});
+            this.state.mid_game = false;
+            this.state.steps = 0;
+            this.state.amount = Math.floor(Math.random() * 99);
         }
         const player_stats = this.getPlayerStats();
         return (
-            <div>
+            <div className="Player">
                 <h3>{this.state.playerName + (this.state.is_turn ? " | TURN" : "" )}</h3>
                 <p>steps: {this.state.steps} | amount: {this.state.amount}</p>
                 {this.getGameBoard()}
@@ -24,6 +28,14 @@ class Player extends Component {
     }
 
     getGameBoard = () => {
+        if(this.state.player_won){
+            return (<div>
+                <button onClick={() => {
+                    this.setState({player_won : false, steps : 0, amount : Math.floor(Math.random() * 99)});
+                }}>New Game</button>
+                <button onClick={() => this.props.onDeletePlayer(this.state.playerName)}>Quit</button>
+            </div>)
+        }
         if(this.props.mid_game === false){
             return null;
         }
@@ -62,10 +74,11 @@ class Player extends Component {
         if(amount === 100){
             alert(this.state.playerName + " won with "+ steps + " steps!");
             this.addPlayerStat(steps);
-            this.props.onEndGame(this.state.playerName);
-        }else{
-            this.props.onPassTurn();
+            this.setState({player_won : true});
+            //this.props.onEndGame(this.state.playerName);
         }
+        this.props.onPassTurn();
+        
     }
 
     getPlayerStats = () => {

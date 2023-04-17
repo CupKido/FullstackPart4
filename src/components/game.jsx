@@ -10,8 +10,7 @@ class Game extends Component {
     }
 
     render() {
-        const {players, player_turn } = this.state
-        players.map(player => console.log(player === players[player_turn]))
+        const {players, player_turn } = this.state;
         return (<div>
             {players.map(player => <Player 
                 key={player.name} 
@@ -24,7 +23,6 @@ class Game extends Component {
                     this.props.onEndGame();
                     this.ResetGame();
                 }}
-                game_ended={this.state.game_ended}
                 />
                 )
                 }
@@ -36,7 +34,7 @@ class Game extends Component {
     }
 
     ResetGame = () => {
-        this.setState({player_turn : 0, game_ended : true});
+        this.setState({player_turn : 0});
     }
 }
  

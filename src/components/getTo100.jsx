@@ -44,9 +44,7 @@ class GetTo100 extends Component {
         const players = this.state.players;
         
         const names = players.map(player => player.name)
-        console.log(player_name, names)
         const index = names.indexOf(player_name)
-        console.log(index)
         players.splice(index, 1);
         this.setState({players});
     }

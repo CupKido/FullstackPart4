@@ -1,0 +1,75 @@
+.Player {
+    margin: auto;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .Player h3 {
+    font-size: 24px;
+    color: #1f8a1f;
+    margin-bottom: 10px;
+  }
+  
+  .Player p {
+    font-size: 18px;
+    color: #1f8a1f;
+    margin-bottom: 10px;
+  }
+  
+  .Player button {
+    background-color: #1f8a1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .Player button:hover {
+    background-color: #3cb371;
+  }
+  
+  .Player button:disabled {
+    background-color: #a9a9a9;
+    cursor: not-allowed;
+  }
+  
+  .Player button:disabled:hover {
+    background-color: #a9a9a9;
+  }
+  
+  .Player .gameBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .Player .gameBoard button {
+    background-color: #1f8a1f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .Player .gameBoard button:hover {
+    background-color: #3cb371;
+  }
+  
+  .Player .gameBoard button:disabled {
+    background-color: #a9a9a9;
+    cursor: not-allowed;
+  }
+  
+  .Player .gameBoard button:disabled:hover {
+    background-color: #a9a9a9;
+  }
